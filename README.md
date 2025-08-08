@@ -11,6 +11,21 @@ The html templates use [mustache templating
 language](https://mustache.github.io/mustache.5.html) while the CSS and
 JavaScript are compiled and minified on GitHub Actions.
 
+## About this fork
+
+This is a fork of the original repository with the following modifications:
+- CMS CAT logo (as svg) was added in [inst/pkgdown/assets/assets/images](https://github.com/awesome-workshop/varnish/tree/main/inst/pkgdown/assets/assets/images)
+  - for it to appear in the lesson header, it must be named cmscat-logo.svg and the following modifications are to be added to the [customised template](https://github.com/awesome-workshop/workbench-template-md) config.yaml to build a lesson:
+    - use: `carpentry: 'cmscat'`
+    - add: `varnish: 'awesome-workshop/varnish'`
+  - other logos (as png) were added in other places but not sure if that had any effect.  
+- In [templates](https://github.com/awesome-workshop/varnish/tree/main/inst/pkgdown/templates):
+  - head.html: CMS logo (stored in assets/favicons/cmscat/favicon.ico) is used as the favicon in head
+  - footer.html: `mailto:` tag has been removed from the footer contact field.
+
+No need to install this when building the lessons through GitHub actions, the reference to this in the lesson template config.yaml is enough. What follows in this README is for the local build.
+
+
 ## Installation
 
 To install this package, you can use our [R-universe repository](https://carpentries.r-universe.dev),
